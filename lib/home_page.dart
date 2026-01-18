@@ -9,13 +9,24 @@ class HomePage extends StatefulWidget {
 
 class _HomePageState extends State<HomePage> {
 
+
+// ui related - open new expense box.
+void openNewExpenseBox(){
+  showDialog(
+    context: context,
+    builder: (context) => AlertDialog(
+      title: Text("New expense"),
+    ),
+    );
+}
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       floatingActionButton: FloatingActionButton(
-        onPressed: () {},
+        onPressed: openNewExpenseBox,
         child: const Icon(Icons.add),
         ),
     );
   }
-}
+} 
