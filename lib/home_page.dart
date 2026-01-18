@@ -9,6 +9,10 @@ class HomePage extends StatefulWidget {
 
 class _HomePageState extends State<HomePage> {
 
+//text controllers
+
+TextEditingController nameController = TextEditingController();
+TextEditingController amountController = TextEditingController();
 
 // ui related - open new expense box.
 void openNewExpenseBox(){
@@ -16,6 +20,20 @@ void openNewExpenseBox(){
     context: context,
     builder: (context) => AlertDialog(
       title: Text("New expense"),
+      content: Column(
+        mainAxisSize: MainAxisSize.min,
+        children: [
+          //expense name
+          TextField(
+            controller: nameController,
+          ),
+
+          //exp amnt
+          TextField(
+            controller: amountController,
+          ),
+        ],
+      ),
     ),
     );
 }
