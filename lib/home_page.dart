@@ -21,6 +21,7 @@ TextEditingController amountController = TextEditingController();
 
 @override
 void initSate() {
+  Provider.of<ExpenseDatabase>(context, listen: false).readExpenses();
   super.initState();
 }
 // ui related - open new expense box.
